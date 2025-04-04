@@ -1,0 +1,615 @@
+/* 기본 스타일 */
+:root {
+    --primary-color: #6a5acd;
+    --secondary-color: #8a2be2;
+    --accent-color: #9370db;
+    --text-color: #333;
+    --light-text: #666;
+    --background-color: #fff;
+    --section-bg: #f9f9ff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'SUIT', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px; /* 좌우 너비 감소 */
+    margin: 0 auto;
+    padding: 0 30px; /* 좌우 패딩 증가 */
+}
+
+/* 헤더 스타일 */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 80px 0 50px;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0 20px; /* 좌우 패딩 추가 */
+}
+
+/* 네비게이션 스타일 */
+nav {
+    background-color: white;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 15px; /* 좌우 패딩 추가 */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 허용 */
+    padding: 0; /* 패딩 제거 */
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    display: block;
+    padding: 15px 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 섹션 공통 스타일 */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section:nth-child(even) {
+    background-color: var(--section-bg);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
+}
+
+/* 경력 섹션 스타일 */
+.experience-item {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.experience-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.experience-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.position {
+    font-weight: 500;
+    color: var(--light-text);
+}
+
+.period {
+    font-style: italic;
+    color: var(--light-text);
+    margin-top: 5px;
+}
+
+.project-group {
+    margin-top: 25px;
+}
+
+.project-group h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.experience-details {
+    padding-left: 20px;
+    margin-left: 0; /* 마진 제거 */
+}
+
+.experience-details li {
+    margin-bottom: 10px;
+}
+
+/* 프로젝트 섹션 스타일 */
+.project-header {
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.project-header-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 300px; /* 헤더 이미지 높이 설정 */
+}
+
+.project-header .section-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 30px 20px 20px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.project-header .section-title::after {
+    margin: 15px 0 0;
+    background-color: white;
+}
+
+.project-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.project-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.project-meta {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.meta-item {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.project-details {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.project-section {
+    margin-bottom: 30px;
+}
+
+.project-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.project-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.project-section p {
+    margin-bottom: 15px;
+}
+
+.project-section ul, .project-section ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    margin-left: 0; /* 마진 제거 */
+}
+
+.project-section li {
+    margin-bottom: 10px;
+}
+
+.achievements li {
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* 스킬 섹션 스타일 */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill-group {
+    flex: 1;
+    min-width: 250px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.skill-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background-color: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+/* 강점 섹션 스타일 */
+.strength-title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.strengths-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.strength-item {
+    flex: 1;
+    min-width: 200px; /* 너비 감소 */
+    max-width: 300px; /* 최대 너비 제한 */
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.strength-item:hover {
+    transform: translateY(-5px);
+}
+
+.strength-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.strength-item h4 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* 학력 섹션 스타일 */
+.education-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-bottom: 30px;
+}
+
+.education-item h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.degree {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.gpa {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* 수상 섹션 스타일 */
+.prize-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-bottom: 30px;
+}
+
+.prize-item h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 25px; /* 중간 화면에서 패딩 조정 */
+    }
+    
+    .project-header-image {
+        height: 250px; /* 중간 화면에서 헤더 이미지 높이 조정 */
+    }
+    
+    .strength-item {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px; /* 작은 화면에서 패딩 조정 */
+    }
+    
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .project-header-image {
+        height: 200px; /* 작은 화면에서 헤더 이미지 높이 조정 */
+    }
+    
+    .project-header .section-title {
+        font-size: 1.7rem;
+        padding: 20px 15px 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav li {
+        margin: 0 8px;
+    }
+    
+    nav a {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+    
+    .project-showcase {
+        flex-direction: column;
+    }
+    
+    .project-info {
+        flex: 1 1 100%;
+    }
+    
+    .meta-item {
+        flex: 1 1 100%;
+    }
+    
+    .strengths-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .strength-item {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    .experience-item, .project-details, .skill-group, .education-item, .prize-item {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px; /* 더 작은 화면에서 패딩 조정 */
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .header-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    .intro {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .project-header-image {
+        height: 180px; /* 더 작은 화면에서 헤더 이미지 높이 조정 */
+    }
+    
+    .project-header .section-title {
+        font-size: 1.5rem;
+        padding: 15px 10px 10px;
+    }
+    
+    .section-title {
+        font-size: 1.7rem;
+    }
+    
+    .experience-item, .project-details, .skill-group, .education-item, .prize-item {
+        padding: 15px;
+    }
+    
+    .experience-details {
+        padding-left: 15px;
+    }
+    
+    .project-section ul, .project-section ol {
+        padding-left: 15px;
+    }
+    
+    .skill-items {
+        justify-content: center;
+    }
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    padding: 0 20px;
+}
+
+.project-description {
+    padding: 0 20px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.project-meta {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.meta-item {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+/* 반응형에서도 패딩 유지 */
+@media (max-width: 768px) {
+    .project-title,
+    .project-description,
+    .project-meta {
+        padding: 0 20px;
+    }
+}
